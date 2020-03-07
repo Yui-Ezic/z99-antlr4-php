@@ -27,15 +27,15 @@ namespace Generated {
                T__6 = 7, T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, RealNum = 12, 
                IntNum = 13, BoolConst = 14, UnsignedInt = 15, UnsignedReal = 16, 
                Type = 17, Ident = 18, Semi = 19, Colon = 20, Comma = 21, 
-               Dot = 22, AssignOp = 23, RelOp = 24, AddOp = 25, MultOp = 26, 
-               LBracket = 27, RBracket = 28, WS = 29;
+               Dot = 22, AssignOp = 23, RelOp = 24, LBracket = 25, RBracket = 26, 
+               Plus = 27, Minus = 28, Star = 29, Slash = 30, WS = 31;
 
 		public const RULE_program = 0, RULE_declareList = 1, RULE_declaration = 2, 
                RULE_identList = 3, RULE_statementList = 4, RULE_statement = 5, 
                RULE_input = 6, RULE_output = 7, RULE_ifStatement = 8, RULE_repeatStatement = 9, 
                RULE_assign = 10, RULE_expression = 11, RULE_boolExpr = 12, 
                RULE_arithmExpression = 13, RULE_term = 14, RULE_factor = 15, 
-               RULE_constant = 16;
+               RULE_addOp = 16, RULE_multOp = 17, RULE_constant = 18;
 
 		/**
 		 * @var array<string>
@@ -43,7 +43,8 @@ namespace Generated {
 		public const RULE_NAMES = [
 			'program', 'declareList', 'declaration', 'identList', 'statementList', 
 			'statement', 'input', 'output', 'ifStatement', 'repeatStatement', 'assign', 
-			'expression', 'boolExpr', 'arithmExpression', 'term', 'factor', 'constant'
+			'expression', 'boolExpr', 'arithmExpression', 'term', 'factor', 'addOp', 
+			'multOp', 'constant'
 		];
 
 		/**
@@ -52,8 +53,8 @@ namespace Generated {
 		private const LITERAL_NAMES = [
 		    null, "'program'", "'var'", "'begin'", "'end.'", "'read'", "'write'", 
 		    "'if'", "'then'", "'fi'", "'repeat'", "'until'", null, null, null, 
-		    null, null, null, null, "';'", "':'", "','", "'.'", "'='", null, null, 
-		    null, "'('", "')'"
+		    null, null, null, null, "';'", "':'", "','", "'.'", "'='", null, "'('", 
+		    "')'", "'+'", "'-'", "'*'", "'/'"
 		];
 
 		/**
@@ -63,7 +64,7 @@ namespace Generated {
 		    null, null, null, null, null, null, null, null, null, null, null, 
 		    null, "RealNum", "IntNum", "BoolConst", "UnsignedInt", "UnsignedReal", 
 		    "Type", "Ident", "Semi", "Colon", "Comma", "Dot", "AssignOp", "RelOp", 
-		    "AddOp", "MultOp", "LBracket", "RBracket", "WS"
+		    "LBracket", "RBracket", "Plus", "Minus", "Star", "Slash", "WS"
 		];
 
 		/**
@@ -71,102 +72,108 @@ namespace Generated {
 		 */
 		private const SERIALIZED_ATN =
 			"\u{3}\u{608B}\u{A72A}\u{8133}\u{B9ED}\u{417C}\u{3BE7}\u{7786}\u{5964}" .
-		    "\u{3}\u{1F}\u{96}\u{4}\u{2}\u{9}\u{2}\u{4}\u{3}\u{9}\u{3}\u{4}\u{4}" .
+		    "\u{3}\u{21}\u{A0}\u{4}\u{2}\u{9}\u{2}\u{4}\u{3}\u{9}\u{3}\u{4}\u{4}" .
 		    "\u{9}\u{4}\u{4}\u{5}\u{9}\u{5}\u{4}\u{6}\u{9}\u{6}\u{4}\u{7}\u{9}" .
 		    "\u{7}\u{4}\u{8}\u{9}\u{8}\u{4}\u{9}\u{9}\u{9}\u{4}\u{A}\u{9}\u{A}" .
 		    "\u{4}\u{B}\u{9}\u{B}\u{4}\u{C}\u{9}\u{C}\u{4}\u{D}\u{9}\u{D}\u{4}" .
 		    "\u{E}\u{9}\u{E}\u{4}\u{F}\u{9}\u{F}\u{4}\u{10}\u{9}\u{10}\u{4}\u{11}" .
-		    "\u{9}\u{11}\u{4}\u{12}\u{9}\u{12}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}" .
-		    "\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}" .
-		    "\u{3}\u{2}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{7}\u{3}\u{33}\u{A}\u{3}" .
-		    "\u{C}\u{3}\u{E}\u{3}\u{36}\u{B}\u{3}\u{3}\u{4}\u{3}\u{4}\u{3}\u{4}" .
-		    "\u{3}\u{4}\u{3}\u{5}\u{3}\u{5}\u{3}\u{5}\u{7}\u{5}\u{3F}\u{A}\u{5}" .
-		    "\u{C}\u{5}\u{E}\u{5}\u{42}\u{B}\u{5}\u{3}\u{6}\u{3}\u{6}\u{3}\u{6}" .
-		    "\u{7}\u{6}\u{47}\u{A}\u{6}\u{C}\u{6}\u{E}\u{6}\u{4A}\u{B}\u{6}\u{3}" .
-		    "\u{7}\u{3}\u{7}\u{3}\u{7}\u{3}\u{7}\u{3}\u{7}\u{5}\u{7}\u{51}\u{A}" .
-		    "\u{7}\u{3}\u{8}\u{3}\u{8}\u{3}\u{8}\u{3}\u{8}\u{3}\u{8}\u{3}\u{9}" .
-		    "\u{3}\u{9}\u{3}\u{9}\u{3}\u{9}\u{3}\u{9}\u{3}\u{A}\u{3}\u{A}\u{3}" .
-		    "\u{A}\u{3}\u{A}\u{3}\u{A}\u{3}\u{A}\u{3}\u{A}\u{3}\u{B}\u{3}\u{B}" .
-		    "\u{3}\u{B}\u{3}\u{B}\u{3}\u{B}\u{3}\u{B}\u{3}\u{C}\u{3}\u{C}\u{3}" .
-		    "\u{C}\u{3}\u{C}\u{3}\u{D}\u{3}\u{D}\u{5}\u{D}\u{70}\u{A}\u{D}\u{3}" .
-		    "\u{E}\u{3}\u{E}\u{3}\u{E}\u{3}\u{E}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}" .
-		    "\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}\u{7}\u{F}\u{7C}\u{A}\u{F}\u{C}\u{F}" .
-		    "\u{E}\u{F}\u{7F}\u{B}\u{F}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}" .
-		    "\u{3}\u{10}\u{3}\u{10}\u{7}\u{10}\u{87}\u{A}\u{10}\u{C}\u{10}\u{E}" .
-		    "\u{10}\u{8A}\u{B}\u{10}\u{3}\u{11}\u{3}\u{11}\u{3}\u{11}\u{3}\u{11}" .
-		    "\u{3}\u{11}\u{3}\u{11}\u{5}\u{11}\u{92}\u{A}\u{11}\u{3}\u{12}\u{3}" .
-		    "\u{12}\u{3}\u{12}\u{2}\u{4}\u{1C}\u{1E}\u{13}\u{2}\u{4}\u{6}\u{8}" .
-		    "\u{A}\u{C}\u{E}\u{10}\u{12}\u{14}\u{16}\u{18}\u{1A}\u{1C}\u{1E}\u{20}" .
-		    "\u{22}\u{2}\u{3}\u{3}\u{2}\u{E}\u{10}\u{2}\u{90}\u{2}\u{24}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{4}\u{2F}\u{3}\u{2}\u{2}\u{2}\u{6}\u{37}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{8}\u{3B}\u{3}\u{2}\u{2}\u{2}\u{A}\u{43}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{C}\u{50}\u{3}\u{2}\u{2}\u{2}\u{E}\u{52}\u{3}\u{2}\u{2}\u{2}\u{10}" .
-		    "\u{57}\u{3}\u{2}\u{2}\u{2}\u{12}\u{5C}\u{3}\u{2}\u{2}\u{2}\u{14}\u{63}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{16}\u{69}\u{3}\u{2}\u{2}\u{2}\u{18}\u{6F}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{1A}\u{71}\u{3}\u{2}\u{2}\u{2}\u{1C}\u{75}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{1E}\u{80}\u{3}\u{2}\u{2}\u{2}\u{20}\u{91}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{22}\u{93}\u{3}\u{2}\u{2}\u{2}\u{24}\u{25}\u{7}\u{3}\u{2}\u{2}" .
-		    "\u{25}\u{26}\u{7}\u{14}\u{2}\u{2}\u{26}\u{27}\u{7}\u{4}\u{2}\u{2}" .
-		    "\u{27}\u{28}\u{5}\u{4}\u{3}\u{2}\u{28}\u{29}\u{7}\u{15}\u{2}\u{2}" .
-		    "\u{29}\u{2A}\u{7}\u{5}\u{2}\u{2}\u{2A}\u{2B}\u{5}\u{A}\u{6}\u{2}\u{2B}" .
-		    "\u{2C}\u{7}\u{15}\u{2}\u{2}\u{2C}\u{2D}\u{7}\u{6}\u{2}\u{2}\u{2D}" .
-		    "\u{2E}\u{7}\u{2}\u{2}\u{3}\u{2E}\u{3}\u{3}\u{2}\u{2}\u{2}\u{2F}\u{34}" .
-		    "\u{5}\u{6}\u{4}\u{2}\u{30}\u{31}\u{7}\u{15}\u{2}\u{2}\u{31}\u{33}" .
-		    "\u{5}\u{6}\u{4}\u{2}\u{32}\u{30}\u{3}\u{2}\u{2}\u{2}\u{33}\u{36}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{34}\u{32}\u{3}\u{2}\u{2}\u{2}\u{34}\u{35}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{35}\u{5}\u{3}\u{2}\u{2}\u{2}\u{36}\u{34}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{37}\u{38}\u{5}\u{8}\u{5}\u{2}\u{38}\u{39}\u{7}\u{16}\u{2}" .
-		    "\u{2}\u{39}\u{3A}\u{7}\u{13}\u{2}\u{2}\u{3A}\u{7}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{3B}\u{40}\u{7}\u{14}\u{2}\u{2}\u{3C}\u{3D}\u{7}\u{17}\u{2}\u{2}" .
-		    "\u{3D}\u{3F}\u{7}\u{14}\u{2}\u{2}\u{3E}\u{3C}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{3F}\u{42}\u{3}\u{2}\u{2}\u{2}\u{40}\u{3E}\u{3}\u{2}\u{2}\u{2}\u{40}" .
-		    "\u{41}\u{3}\u{2}\u{2}\u{2}\u{41}\u{9}\u{3}\u{2}\u{2}\u{2}\u{42}\u{40}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{43}\u{48}\u{5}\u{C}\u{7}\u{2}\u{44}\u{45}\u{7}" .
-		    "\u{15}\u{2}\u{2}\u{45}\u{47}\u{5}\u{C}\u{7}\u{2}\u{46}\u{44}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{47}\u{4A}\u{3}\u{2}\u{2}\u{2}\u{48}\u{46}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{48}\u{49}\u{3}\u{2}\u{2}\u{2}\u{49}\u{B}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{4A}\u{48}\u{3}\u{2}\u{2}\u{2}\u{4B}\u{51}\u{5}\u{16}\u{C}" .
-		    "\u{2}\u{4C}\u{51}\u{5}\u{E}\u{8}\u{2}\u{4D}\u{51}\u{5}\u{10}\u{9}" .
-		    "\u{2}\u{4E}\u{51}\u{5}\u{12}\u{A}\u{2}\u{4F}\u{51}\u{5}\u{14}\u{B}" .
-		    "\u{2}\u{50}\u{4B}\u{3}\u{2}\u{2}\u{2}\u{50}\u{4C}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{50}\u{4D}\u{3}\u{2}\u{2}\u{2}\u{50}\u{4E}\u{3}\u{2}\u{2}\u{2}\u{50}" .
-		    "\u{4F}\u{3}\u{2}\u{2}\u{2}\u{51}\u{D}\u{3}\u{2}\u{2}\u{2}\u{52}\u{53}" .
-		    "\u{7}\u{7}\u{2}\u{2}\u{53}\u{54}\u{7}\u{1D}\u{2}\u{2}\u{54}\u{55}" .
-		    "\u{5}\u{8}\u{5}\u{2}\u{55}\u{56}\u{7}\u{1E}\u{2}\u{2}\u{56}\u{F}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{57}\u{58}\u{7}\u{8}\u{2}\u{2}\u{58}\u{59}\u{7}\u{1D}" .
-		    "\u{2}\u{2}\u{59}\u{5A}\u{5}\u{8}\u{5}\u{2}\u{5A}\u{5B}\u{7}\u{1E}" .
-		    "\u{2}\u{2}\u{5B}\u{11}\u{3}\u{2}\u{2}\u{2}\u{5C}\u{5D}\u{7}\u{9}\u{2}" .
-		    "\u{2}\u{5D}\u{5E}\u{5}\u{18}\u{D}\u{2}\u{5E}\u{5F}\u{7}\u{A}\u{2}" .
-		    "\u{2}\u{5F}\u{60}\u{5}\u{A}\u{6}\u{2}\u{60}\u{61}\u{7}\u{15}\u{2}" .
-		    "\u{2}\u{61}\u{62}\u{7}\u{B}\u{2}\u{2}\u{62}\u{13}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{63}\u{64}\u{7}\u{C}\u{2}\u{2}\u{64}\u{65}\u{5}\u{A}\u{6}\u{2}\u{65}" .
-		    "\u{66}\u{7}\u{15}\u{2}\u{2}\u{66}\u{67}\u{7}\u{D}\u{2}\u{2}\u{67}" .
-		    "\u{68}\u{5}\u{18}\u{D}\u{2}\u{68}\u{15}\u{3}\u{2}\u{2}\u{2}\u{69}" .
-		    "\u{6A}\u{7}\u{14}\u{2}\u{2}\u{6A}\u{6B}\u{7}\u{19}\u{2}\u{2}\u{6B}" .
-		    "\u{6C}\u{5}\u{18}\u{D}\u{2}\u{6C}\u{17}\u{3}\u{2}\u{2}\u{2}\u{6D}" .
-		    "\u{70}\u{5}\u{1C}\u{F}\u{2}\u{6E}\u{70}\u{5}\u{1A}\u{E}\u{2}\u{6F}" .
-		    "\u{6D}\u{3}\u{2}\u{2}\u{2}\u{6F}\u{6E}\u{3}\u{2}\u{2}\u{2}\u{70}\u{19}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{71}\u{72}\u{5}\u{1C}\u{F}\u{2}\u{72}\u{73}" .
-		    "\u{7}\u{1A}\u{2}\u{2}\u{73}\u{74}\u{5}\u{1C}\u{F}\u{2}\u{74}\u{1B}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{75}\u{76}\u{8}\u{F}\u{1}\u{2}\u{76}\u{77}\u{5}" .
-		    "\u{1E}\u{10}\u{2}\u{77}\u{7D}\u{3}\u{2}\u{2}\u{2}\u{78}\u{79}\u{C}" .
-		    "\u{3}\u{2}\u{2}\u{79}\u{7A}\u{7}\u{1B}\u{2}\u{2}\u{7A}\u{7C}\u{5}" .
-		    "\u{1E}\u{10}\u{2}\u{7B}\u{78}\u{3}\u{2}\u{2}\u{2}\u{7C}\u{7F}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{7D}\u{7B}\u{3}\u{2}\u{2}\u{2}\u{7D}\u{7E}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{7E}\u{1D}\u{3}\u{2}\u{2}\u{2}\u{7F}\u{7D}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{80}\u{81}\u{8}\u{10}\u{1}\u{2}\u{81}\u{82}\u{5}\u{20}\u{11}" .
-		    "\u{2}\u{82}\u{88}\u{3}\u{2}\u{2}\u{2}\u{83}\u{84}\u{C}\u{3}\u{2}\u{2}" .
-		    "\u{84}\u{85}\u{7}\u{1C}\u{2}\u{2}\u{85}\u{87}\u{5}\u{20}\u{11}\u{2}" .
-		    "\u{86}\u{83}\u{3}\u{2}\u{2}\u{2}\u{87}\u{8A}\u{3}\u{2}\u{2}\u{2}\u{88}" .
-		    "\u{86}\u{3}\u{2}\u{2}\u{2}\u{88}\u{89}\u{3}\u{2}\u{2}\u{2}\u{89}\u{1F}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{8A}\u{88}\u{3}\u{2}\u{2}\u{2}\u{8B}\u{92}\u{7}" .
-		    "\u{14}\u{2}\u{2}\u{8C}\u{92}\u{5}\u{22}\u{12}\u{2}\u{8D}\u{8E}\u{7}" .
-		    "\u{1D}\u{2}\u{2}\u{8E}\u{8F}\u{5}\u{1C}\u{F}\u{2}\u{8F}\u{90}\u{7}" .
-		    "\u{1E}\u{2}\u{2}\u{90}\u{92}\u{3}\u{2}\u{2}\u{2}\u{91}\u{8B}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{91}\u{8C}\u{3}\u{2}\u{2}\u{2}\u{91}\u{8D}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{92}\u{21}\u{3}\u{2}\u{2}\u{2}\u{93}\u{94}\u{9}\u{2}\u{2}" .
-		    "\u{2}\u{94}\u{23}\u{3}\u{2}\u{2}\u{2}\u{A}\u{34}\u{40}\u{48}\u{50}" .
-		    "\u{6F}\u{7D}\u{88}\u{91}";
+		    "\u{9}\u{11}\u{4}\u{12}\u{9}\u{12}\u{4}\u{13}\u{9}\u{13}\u{4}\u{14}" .
+		    "\u{9}\u{14}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}" .
+		    "\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{2}\u{3}\u{3}" .
+		    "\u{3}\u{3}\u{3}\u{3}\u{7}\u{3}\u{37}\u{A}\u{3}\u{C}\u{3}\u{E}\u{3}" .
+		    "\u{3A}\u{B}\u{3}\u{3}\u{4}\u{3}\u{4}\u{3}\u{4}\u{3}\u{4}\u{3}\u{5}" .
+		    "\u{3}\u{5}\u{3}\u{5}\u{7}\u{5}\u{43}\u{A}\u{5}\u{C}\u{5}\u{E}\u{5}" .
+		    "\u{46}\u{B}\u{5}\u{3}\u{6}\u{3}\u{6}\u{3}\u{6}\u{7}\u{6}\u{4B}\u{A}" .
+		    "\u{6}\u{C}\u{6}\u{E}\u{6}\u{4E}\u{B}\u{6}\u{3}\u{7}\u{3}\u{7}\u{3}" .
+		    "\u{7}\u{3}\u{7}\u{3}\u{7}\u{5}\u{7}\u{55}\u{A}\u{7}\u{3}\u{8}\u{3}" .
+		    "\u{8}\u{3}\u{8}\u{3}\u{8}\u{3}\u{8}\u{3}\u{9}\u{3}\u{9}\u{3}\u{9}" .
+		    "\u{3}\u{9}\u{3}\u{9}\u{3}\u{A}\u{3}\u{A}\u{3}\u{A}\u{3}\u{A}\u{3}" .
+		    "\u{A}\u{3}\u{A}\u{3}\u{A}\u{3}\u{B}\u{3}\u{B}\u{3}\u{B}\u{3}\u{B}" .
+		    "\u{3}\u{B}\u{3}\u{B}\u{3}\u{C}\u{3}\u{C}\u{3}\u{C}\u{3}\u{C}\u{3}" .
+		    "\u{D}\u{3}\u{D}\u{5}\u{D}\u{74}\u{A}\u{D}\u{3}\u{E}\u{3}\u{E}\u{3}" .
+		    "\u{E}\u{3}\u{E}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}" .
+		    "\u{3}\u{F}\u{3}\u{F}\u{7}\u{F}\u{81}\u{A}\u{F}\u{C}\u{F}\u{E}\u{F}" .
+		    "\u{84}\u{B}\u{F}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}\u{3}" .
+		    "\u{10}\u{3}\u{10}\u{3}\u{10}\u{7}\u{10}\u{8D}\u{A}\u{10}\u{C}\u{10}" .
+		    "\u{E}\u{10}\u{90}\u{B}\u{10}\u{3}\u{11}\u{3}\u{11}\u{3}\u{11}\u{3}" .
+		    "\u{11}\u{3}\u{11}\u{3}\u{11}\u{5}\u{11}\u{98}\u{A}\u{11}\u{3}\u{12}" .
+		    "\u{3}\u{12}\u{3}\u{13}\u{3}\u{13}\u{3}\u{14}\u{3}\u{14}\u{3}\u{14}" .
+		    "\u{2}\u{4}\u{1C}\u{1E}\u{15}\u{2}\u{4}\u{6}\u{8}\u{A}\u{C}\u{E}\u{10}" .
+		    "\u{12}\u{14}\u{16}\u{18}\u{1A}\u{1C}\u{1E}\u{20}\u{22}\u{24}\u{26}" .
+		    "\u{2}\u{5}\u{3}\u{2}\u{1D}\u{1E}\u{3}\u{2}\u{1F}\u{20}\u{3}\u{2}\u{E}" .
+		    "\u{10}\u{2}\u{98}\u{2}\u{28}\u{3}\u{2}\u{2}\u{2}\u{4}\u{33}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{6}\u{3B}\u{3}\u{2}\u{2}\u{2}\u{8}\u{3F}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{A}\u{47}\u{3}\u{2}\u{2}\u{2}\u{C}\u{54}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{E}\u{56}\u{3}\u{2}\u{2}\u{2}\u{10}\u{5B}\u{3}\u{2}\u{2}\u{2}\u{12}" .
+		    "\u{60}\u{3}\u{2}\u{2}\u{2}\u{14}\u{67}\u{3}\u{2}\u{2}\u{2}\u{16}\u{6D}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{18}\u{73}\u{3}\u{2}\u{2}\u{2}\u{1A}\u{75}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{1C}\u{79}\u{3}\u{2}\u{2}\u{2}\u{1E}\u{85}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{20}\u{97}\u{3}\u{2}\u{2}\u{2}\u{22}\u{99}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{24}\u{9B}\u{3}\u{2}\u{2}\u{2}\u{26}\u{9D}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{28}\u{29}\u{7}\u{3}\u{2}\u{2}\u{29}\u{2A}\u{7}\u{14}\u{2}\u{2}" .
+		    "\u{2A}\u{2B}\u{7}\u{4}\u{2}\u{2}\u{2B}\u{2C}\u{5}\u{4}\u{3}\u{2}\u{2C}" .
+		    "\u{2D}\u{7}\u{15}\u{2}\u{2}\u{2D}\u{2E}\u{7}\u{5}\u{2}\u{2}\u{2E}" .
+		    "\u{2F}\u{5}\u{A}\u{6}\u{2}\u{2F}\u{30}\u{7}\u{15}\u{2}\u{2}\u{30}" .
+		    "\u{31}\u{7}\u{6}\u{2}\u{2}\u{31}\u{32}\u{7}\u{2}\u{2}\u{3}\u{32}\u{3}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{33}\u{38}\u{5}\u{6}\u{4}\u{2}\u{34}\u{35}\u{7}" .
+		    "\u{15}\u{2}\u{2}\u{35}\u{37}\u{5}\u{6}\u{4}\u{2}\u{36}\u{34}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{37}\u{3A}\u{3}\u{2}\u{2}\u{2}\u{38}\u{36}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{38}\u{39}\u{3}\u{2}\u{2}\u{2}\u{39}\u{5}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{3A}\u{38}\u{3}\u{2}\u{2}\u{2}\u{3B}\u{3C}\u{5}\u{8}\u{5}\u{2}" .
+		    "\u{3C}\u{3D}\u{7}\u{16}\u{2}\u{2}\u{3D}\u{3E}\u{7}\u{13}\u{2}\u{2}" .
+		    "\u{3E}\u{7}\u{3}\u{2}\u{2}\u{2}\u{3F}\u{44}\u{7}\u{14}\u{2}\u{2}\u{40}" .
+		    "\u{41}\u{7}\u{17}\u{2}\u{2}\u{41}\u{43}\u{7}\u{14}\u{2}\u{2}\u{42}" .
+		    "\u{40}\u{3}\u{2}\u{2}\u{2}\u{43}\u{46}\u{3}\u{2}\u{2}\u{2}\u{44}\u{42}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{44}\u{45}\u{3}\u{2}\u{2}\u{2}\u{45}\u{9}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{46}\u{44}\u{3}\u{2}\u{2}\u{2}\u{47}\u{4C}\u{5}\u{C}" .
+		    "\u{7}\u{2}\u{48}\u{49}\u{7}\u{15}\u{2}\u{2}\u{49}\u{4B}\u{5}\u{C}" .
+		    "\u{7}\u{2}\u{4A}\u{48}\u{3}\u{2}\u{2}\u{2}\u{4B}\u{4E}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{4C}\u{4A}\u{3}\u{2}\u{2}\u{2}\u{4C}\u{4D}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{4D}\u{B}\u{3}\u{2}\u{2}\u{2}\u{4E}\u{4C}\u{3}\u{2}\u{2}\u{2}\u{4F}" .
+		    "\u{55}\u{5}\u{16}\u{C}\u{2}\u{50}\u{55}\u{5}\u{E}\u{8}\u{2}\u{51}" .
+		    "\u{55}\u{5}\u{10}\u{9}\u{2}\u{52}\u{55}\u{5}\u{12}\u{A}\u{2}\u{53}" .
+		    "\u{55}\u{5}\u{14}\u{B}\u{2}\u{54}\u{4F}\u{3}\u{2}\u{2}\u{2}\u{54}" .
+		    "\u{50}\u{3}\u{2}\u{2}\u{2}\u{54}\u{51}\u{3}\u{2}\u{2}\u{2}\u{54}\u{52}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{54}\u{53}\u{3}\u{2}\u{2}\u{2}\u{55}\u{D}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{56}\u{57}\u{7}\u{7}\u{2}\u{2}\u{57}\u{58}\u{7}\u{1B}" .
+		    "\u{2}\u{2}\u{58}\u{59}\u{5}\u{8}\u{5}\u{2}\u{59}\u{5A}\u{7}\u{1C}" .
+		    "\u{2}\u{2}\u{5A}\u{F}\u{3}\u{2}\u{2}\u{2}\u{5B}\u{5C}\u{7}\u{8}\u{2}" .
+		    "\u{2}\u{5C}\u{5D}\u{7}\u{1B}\u{2}\u{2}\u{5D}\u{5E}\u{5}\u{8}\u{5}" .
+		    "\u{2}\u{5E}\u{5F}\u{7}\u{1C}\u{2}\u{2}\u{5F}\u{11}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{60}\u{61}\u{7}\u{9}\u{2}\u{2}\u{61}\u{62}\u{5}\u{18}\u{D}" .
+		    "\u{2}\u{62}\u{63}\u{7}\u{A}\u{2}\u{2}\u{63}\u{64}\u{5}\u{A}\u{6}\u{2}" .
+		    "\u{64}\u{65}\u{7}\u{15}\u{2}\u{2}\u{65}\u{66}\u{7}\u{B}\u{2}\u{2}" .
+		    "\u{66}\u{13}\u{3}\u{2}\u{2}\u{2}\u{67}\u{68}\u{7}\u{C}\u{2}\u{2}\u{68}" .
+		    "\u{69}\u{5}\u{A}\u{6}\u{2}\u{69}\u{6A}\u{7}\u{15}\u{2}\u{2}\u{6A}" .
+		    "\u{6B}\u{7}\u{D}\u{2}\u{2}\u{6B}\u{6C}\u{5}\u{18}\u{D}\u{2}\u{6C}" .
+		    "\u{15}\u{3}\u{2}\u{2}\u{2}\u{6D}\u{6E}\u{7}\u{14}\u{2}\u{2}\u{6E}" .
+		    "\u{6F}\u{7}\u{19}\u{2}\u{2}\u{6F}\u{70}\u{5}\u{18}\u{D}\u{2}\u{70}" .
+		    "\u{17}\u{3}\u{2}\u{2}\u{2}\u{71}\u{74}\u{5}\u{1C}\u{F}\u{2}\u{72}" .
+		    "\u{74}\u{5}\u{1A}\u{E}\u{2}\u{73}\u{71}\u{3}\u{2}\u{2}\u{2}\u{73}" .
+		    "\u{72}\u{3}\u{2}\u{2}\u{2}\u{74}\u{19}\u{3}\u{2}\u{2}\u{2}\u{75}\u{76}" .
+		    "\u{5}\u{1C}\u{F}\u{2}\u{76}\u{77}\u{7}\u{1A}\u{2}\u{2}\u{77}\u{78}" .
+		    "\u{5}\u{1C}\u{F}\u{2}\u{78}\u{1B}\u{3}\u{2}\u{2}\u{2}\u{79}\u{7A}" .
+		    "\u{8}\u{F}\u{1}\u{2}\u{7A}\u{7B}\u{5}\u{1E}\u{10}\u{2}\u{7B}\u{82}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{7C}\u{7D}\u{C}\u{3}\u{2}\u{2}\u{7D}\u{7E}\u{5}" .
+		    "\u{22}\u{12}\u{2}\u{7E}\u{7F}\u{5}\u{1E}\u{10}\u{2}\u{7F}\u{81}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{80}\u{7C}\u{3}\u{2}\u{2}\u{2}\u{81}\u{84}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{82}\u{80}\u{3}\u{2}\u{2}\u{2}\u{82}\u{83}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{83}\u{1D}\u{3}\u{2}\u{2}\u{2}\u{84}\u{82}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{85}\u{86}\u{8}\u{10}\u{1}\u{2}\u{86}\u{87}\u{5}\u{20}\u{11}\u{2}" .
+		    "\u{87}\u{8E}\u{3}\u{2}\u{2}\u{2}\u{88}\u{89}\u{C}\u{3}\u{2}\u{2}\u{89}" .
+		    "\u{8A}\u{5}\u{24}\u{13}\u{2}\u{8A}\u{8B}\u{5}\u{20}\u{11}\u{2}\u{8B}" .
+		    "\u{8D}\u{3}\u{2}\u{2}\u{2}\u{8C}\u{88}\u{3}\u{2}\u{2}\u{2}\u{8D}\u{90}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{8E}\u{8C}\u{3}\u{2}\u{2}\u{2}\u{8E}\u{8F}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{8F}\u{1F}\u{3}\u{2}\u{2}\u{2}\u{90}\u{8E}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{91}\u{98}\u{7}\u{14}\u{2}\u{2}\u{92}\u{98}\u{5}\u{26}" .
+		    "\u{14}\u{2}\u{93}\u{94}\u{7}\u{1B}\u{2}\u{2}\u{94}\u{95}\u{5}\u{1C}" .
+		    "\u{F}\u{2}\u{95}\u{96}\u{7}\u{1C}\u{2}\u{2}\u{96}\u{98}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{97}\u{91}\u{3}\u{2}\u{2}\u{2}\u{97}\u{92}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{97}\u{93}\u{3}\u{2}\u{2}\u{2}\u{98}\u{21}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{99}\u{9A}\u{9}\u{2}\u{2}\u{2}\u{9A}\u{23}\u{3}\u{2}\u{2}\u{2}\u{9B}" .
+		    "\u{9C}\u{9}\u{3}\u{2}\u{2}\u{9C}\u{25}\u{3}\u{2}\u{2}\u{2}\u{9D}\u{9E}" .
+		    "\u{9}\u{4}\u{2}\u{2}\u{9E}\u{27}\u{3}\u{2}\u{2}\u{2}\u{A}\u{38}\u{44}" .
+		    "\u{4C}\u{54}\u{73}\u{82}\u{8E}\u{97}";
 
 		protected static $atn;
 		protected static $decisionToDFA;
@@ -239,25 +246,25 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(34);
-		        $this->match(self::T__0);
-		        $this->setState(35);
-		        $this->match(self::Ident);
-		        $this->setState(36);
-		        $this->match(self::T__1);
-		        $this->setState(37);
-		        $this->declareList();
 		        $this->setState(38);
-		        $this->match(self::Semi);
+		        $this->match(self::T__0);
 		        $this->setState(39);
-		        $this->match(self::T__2);
+		        $this->match(self::Ident);
 		        $this->setState(40);
-		        $this->statementList();
+		        $this->match(self::T__1);
 		        $this->setState(41);
-		        $this->match(self::Semi);
+		        $this->declareList();
 		        $this->setState(42);
-		        $this->match(self::T__3);
+		        $this->match(self::Semi);
 		        $this->setState(43);
+		        $this->match(self::T__2);
+		        $this->setState(44);
+		        $this->statementList();
+		        $this->setState(45);
+		        $this->match(self::Semi);
+		        $this->setState(46);
+		        $this->match(self::T__3);
+		        $this->setState(47);
 		        $this->match(self::EOF);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -281,22 +288,22 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(45);
+		        $this->setState(49);
 		        $this->declaration();
-		        $this->setState(50);
+		        $this->setState(54);
 		        $this->errorHandler->sync($this);
 
 		        $alt = $this->getInterpreter()->adaptivePredict($this->input, 0, $this->ctx);
 
 		        while ($alt !== 2 && $alt !== ATN::INVALID_ALT_NUMBER) {
 		        	if ($alt === 1) {
-		        		$this->setState(46);
+		        		$this->setState(50);
 		        		$this->match(self::Semi);
-		        		$this->setState(47);
+		        		$this->setState(51);
 		        		$this->declaration(); 
 		        	}
 
-		        	$this->setState(52);
+		        	$this->setState(56);
 		        	$this->errorHandler->sync($this);
 
 		        	$alt = $this->getInterpreter()->adaptivePredict($this->input, 0, $this->ctx);
@@ -323,11 +330,11 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(53);
+		        $this->setState(57);
 		        $this->identList();
-		        $this->setState(54);
+		        $this->setState(58);
 		        $this->match(self::Colon);
-		        $this->setState(55);
+		        $this->setState(59);
 		        $this->match(self::Type);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -351,18 +358,18 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(57);
+		        $this->setState(61);
 		        $this->match(self::Ident);
-		        $this->setState(62);
+		        $this->setState(66);
 		        $this->errorHandler->sync($this);
 
 		        $_la = $this->input->LA(1);
 		        while ($_la === self::Comma) {
-		        	$this->setState(58);
+		        	$this->setState(62);
 		        	$this->match(self::Comma);
-		        	$this->setState(59);
+		        	$this->setState(63);
 		        	$this->match(self::Ident);
-		        	$this->setState(64);
+		        	$this->setState(68);
 		        	$this->errorHandler->sync($this);
 		        	$_la = $this->input->LA(1);
 		        }
@@ -388,22 +395,22 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(65);
+		        $this->setState(69);
 		        $this->statement();
-		        $this->setState(70);
+		        $this->setState(74);
 		        $this->errorHandler->sync($this);
 
 		        $alt = $this->getInterpreter()->adaptivePredict($this->input, 2, $this->ctx);
 
 		        while ($alt !== 2 && $alt !== ATN::INVALID_ALT_NUMBER) {
 		        	if ($alt === 1) {
-		        		$this->setState(66);
+		        		$this->setState(70);
 		        		$this->match(self::Semi);
-		        		$this->setState(67);
+		        		$this->setState(71);
 		        		$this->statement(); 
 		        	}
 
-		        	$this->setState(72);
+		        	$this->setState(76);
 		        	$this->errorHandler->sync($this);
 
 		        	$alt = $this->getInterpreter()->adaptivePredict($this->input, 2, $this->ctx);
@@ -429,37 +436,37 @@ namespace Generated {
 		    $this->enterRule($localContext, 10, self::RULE_statement);
 
 		    try {
-		        $this->setState(78);
+		        $this->setState(82);
 		        $this->errorHandler->sync($this);
 
 		        switch ($this->input->LA(1)) {
 		            case self::Ident:
 		            	$this->enterOuterAlt($localContext, 1);
-		            	$this->setState(73);
+		            	$this->setState(77);
 		            	$this->assign();
 		            	break;
 
 		            case self::T__4:
 		            	$this->enterOuterAlt($localContext, 2);
-		            	$this->setState(74);
+		            	$this->setState(78);
 		            	$this->input();
 		            	break;
 
 		            case self::T__5:
 		            	$this->enterOuterAlt($localContext, 3);
-		            	$this->setState(75);
+		            	$this->setState(79);
 		            	$this->output();
 		            	break;
 
 		            case self::T__6:
 		            	$this->enterOuterAlt($localContext, 4);
-		            	$this->setState(76);
+		            	$this->setState(80);
 		            	$this->ifStatement();
 		            	break;
 
 		            case self::T__9:
 		            	$this->enterOuterAlt($localContext, 5);
-		            	$this->setState(77);
+		            	$this->setState(81);
 		            	$this->repeatStatement();
 		            	break;
 
@@ -488,13 +495,13 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(80);
+		        $this->setState(84);
 		        $this->match(self::T__4);
-		        $this->setState(81);
+		        $this->setState(85);
 		        $this->match(self::LBracket);
-		        $this->setState(82);
+		        $this->setState(86);
 		        $this->identList();
-		        $this->setState(83);
+		        $this->setState(87);
 		        $this->match(self::RBracket);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -518,13 +525,13 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(85);
+		        $this->setState(89);
 		        $this->match(self::T__5);
-		        $this->setState(86);
+		        $this->setState(90);
 		        $this->match(self::LBracket);
-		        $this->setState(87);
+		        $this->setState(91);
 		        $this->identList();
-		        $this->setState(88);
+		        $this->setState(92);
 		        $this->match(self::RBracket);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -548,17 +555,17 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(90);
-		        $this->match(self::T__6);
-		        $this->setState(91);
-		        $this->expression();
-		        $this->setState(92);
-		        $this->match(self::T__7);
-		        $this->setState(93);
-		        $this->statementList();
 		        $this->setState(94);
-		        $this->match(self::Semi);
+		        $this->match(self::T__6);
 		        $this->setState(95);
+		        $this->expression();
+		        $this->setState(96);
+		        $this->match(self::T__7);
+		        $this->setState(97);
+		        $this->statementList();
+		        $this->setState(98);
+		        $this->match(self::Semi);
+		        $this->setState(99);
 		        $this->match(self::T__8);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -582,15 +589,15 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(97);
-		        $this->match(self::T__9);
-		        $this->setState(98);
-		        $this->statementList();
-		        $this->setState(99);
-		        $this->match(self::Semi);
-		        $this->setState(100);
-		        $this->match(self::T__10);
 		        $this->setState(101);
+		        $this->match(self::T__9);
+		        $this->setState(102);
+		        $this->statementList();
+		        $this->setState(103);
+		        $this->match(self::Semi);
+		        $this->setState(104);
+		        $this->match(self::T__10);
+		        $this->setState(105);
 		        $this->expression();
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -614,11 +621,11 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(103);
+		        $this->setState(107);
 		        $this->match(self::Ident);
-		        $this->setState(104);
+		        $this->setState(108);
 		        $this->match(self::AssignOp);
-		        $this->setState(105);
+		        $this->setState(109);
 		        $this->expression();
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -641,19 +648,19 @@ namespace Generated {
 		    $this->enterRule($localContext, 22, self::RULE_expression);
 
 		    try {
-		        $this->setState(109);
+		        $this->setState(113);
 		        $this->errorHandler->sync($this);
 
 		        switch ($this->getInterpreter()->adaptivePredict($this->input, 4, $this->ctx)) {
 		        	case 1:
 		        	    $this->enterOuterAlt($localContext, 1);
-		        	    $this->setState(107);
+		        	    $this->setState(111);
 		        	    $this->recursiveArithmExpression(0);
 		        	break;
 
 		        	case 2:
 		        	    $this->enterOuterAlt($localContext, 2);
-		        	    $this->setState(108);
+		        	    $this->setState(112);
 		        	    $this->boolExpr();
 		        	break;
 		        }
@@ -679,11 +686,11 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(111);
+		        $this->setState(115);
 		        $this->recursiveArithmExpression(0);
-		        $this->setState(112);
+		        $this->setState(116);
 		        $this->match(self::RelOp);
-		        $this->setState(113);
+		        $this->setState(117);
 		        $this->recursiveArithmExpression(0);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
@@ -718,10 +725,10 @@ namespace Generated {
 
 			try {
 				$this->enterOuterAlt($localContext, 1);
-				$this->setState(116);
+				$this->setState(120);
 				$this->recursiveTerm(0);
 				$this->ctx->stop = $this->input->LT(-1);
-				$this->setState(123);
+				$this->setState(128);
 				$this->errorHandler->sync($this);
 
 				$alt = $this->getInterpreter()->adaptivePredict($this->input, 5, $this->ctx);
@@ -735,18 +742,18 @@ namespace Generated {
 						$previousContext = $localContext;
 						$localContext = new Context\ArithmExpressionContext($parentContext, $parentState);
 						$this->pushNewRecursionContext($localContext, $startState, self::RULE_arithmExpression);
-						$this->setState(118);
+						$this->setState(122);
 
 						if (!($this->precpred($this->ctx, 1))) {
 						    throw new FailedPredicateException($this, "\\\$this->precpred(\\\$this->ctx, 1)");
 						}
-						$this->setState(119);
-						$this->match(self::AddOp);
-						$this->setState(120);
+						$this->setState(123);
+						$this->addOp();
+						$this->setState(124);
 						$this->recursiveTerm(0); 
 					}
 
-					$this->setState(125);
+					$this->setState(130);
 					$this->errorHandler->sync($this);
 
 					$alt = $this->getInterpreter()->adaptivePredict($this->input, 5, $this->ctx);
@@ -784,10 +791,10 @@ namespace Generated {
 
 			try {
 				$this->enterOuterAlt($localContext, 1);
-				$this->setState(127);
+				$this->setState(132);
 				$this->factor();
 				$this->ctx->stop = $this->input->LT(-1);
-				$this->setState(134);
+				$this->setState(140);
 				$this->errorHandler->sync($this);
 
 				$alt = $this->getInterpreter()->adaptivePredict($this->input, 6, $this->ctx);
@@ -801,18 +808,18 @@ namespace Generated {
 						$previousContext = $localContext;
 						$localContext = new Context\TermContext($parentContext, $parentState);
 						$this->pushNewRecursionContext($localContext, $startState, self::RULE_term);
-						$this->setState(129);
+						$this->setState(134);
 
 						if (!($this->precpred($this->ctx, 1))) {
 						    throw new FailedPredicateException($this, "\\\$this->precpred(\\\$this->ctx, 1)");
 						}
-						$this->setState(130);
-						$this->match(self::MultOp);
-						$this->setState(131);
+						$this->setState(135);
+						$this->multOp();
+						$this->setState(136);
 						$this->factor(); 
 					}
 
-					$this->setState(136);
+					$this->setState(142);
 					$this->errorHandler->sync($this);
 
 					$alt = $this->getInterpreter()->adaptivePredict($this->input, 6, $this->ctx);
@@ -838,13 +845,13 @@ namespace Generated {
 		    $this->enterRule($localContext, 30, self::RULE_factor);
 
 		    try {
-		        $this->setState(143);
+		        $this->setState(149);
 		        $this->errorHandler->sync($this);
 
 		        switch ($this->input->LA(1)) {
 		            case self::Ident:
 		            	$this->enterOuterAlt($localContext, 1);
-		            	$this->setState(137);
+		            	$this->setState(143);
 		            	$this->match(self::Ident);
 		            	break;
 
@@ -852,17 +859,17 @@ namespace Generated {
 		            case self::IntNum:
 		            case self::BoolConst:
 		            	$this->enterOuterAlt($localContext, 2);
-		            	$this->setState(138);
+		            	$this->setState(144);
 		            	$this->constant();
 		            	break;
 
 		            case self::LBracket:
 		            	$this->enterOuterAlt($localContext, 3);
-		            	$this->setState(139);
+		            	$this->setState(145);
 		            	$this->match(self::LBracket);
-		            	$this->setState(140);
+		            	$this->setState(146);
 		            	$this->recursiveArithmExpression(0);
-		            	$this->setState(141);
+		            	$this->setState(147);
 		            	$this->match(self::RBracket);
 		            	break;
 
@@ -883,15 +890,87 @@ namespace Generated {
 		/**
 		 * @throws RecognitionException
 		 */
+		public function addOp() : Context\AddOpContext
+		{
+		    $localContext = new Context\AddOpContext($this->ctx, $this->getState());
+
+		    $this->enterRule($localContext, 32, self::RULE_addOp);
+
+		    try {
+		        $this->enterOuterAlt($localContext, 1);
+		        $this->setState(151);
+
+		        $_la = $this->input->LA(1);
+
+		        if (!($_la === self::Plus || $_la === self::Minus)) {
+		        $this->errorHandler->recoverInline($this);
+		        } else {
+		        	if ($this->input->LA(1) === Token::EOF) {
+		        	    $this->matchedEOF = true;
+		            }
+
+		        	$this->errorHandler->reportMatch($this);
+		        	$this->consume();
+		        }
+		    } catch (RecognitionException $exception) {
+		        $localContext->exception = $exception;
+		        $this->errorHandler->reportError($this, $exception);
+		        $this->errorHandler->recover($this, $exception);
+		    } finally {
+		        $this->exitRule();
+		    }
+
+		    return $localContext;
+		}
+
+		/**
+		 * @throws RecognitionException
+		 */
+		public function multOp() : Context\MultOpContext
+		{
+		    $localContext = new Context\MultOpContext($this->ctx, $this->getState());
+
+		    $this->enterRule($localContext, 34, self::RULE_multOp);
+
+		    try {
+		        $this->enterOuterAlt($localContext, 1);
+		        $this->setState(153);
+
+		        $_la = $this->input->LA(1);
+
+		        if (!($_la === self::Star || $_la === self::Slash)) {
+		        $this->errorHandler->recoverInline($this);
+		        } else {
+		        	if ($this->input->LA(1) === Token::EOF) {
+		        	    $this->matchedEOF = true;
+		            }
+
+		        	$this->errorHandler->reportMatch($this);
+		        	$this->consume();
+		        }
+		    } catch (RecognitionException $exception) {
+		        $localContext->exception = $exception;
+		        $this->errorHandler->reportError($this, $exception);
+		        $this->errorHandler->recover($this, $exception);
+		    } finally {
+		        $this->exitRule();
+		    }
+
+		    return $localContext;
+		}
+
+		/**
+		 * @throws RecognitionException
+		 */
 		public function constant() : Context\ConstantContext
 		{
 		    $localContext = new Context\ConstantContext($this->ctx, $this->getState());
 
-		    $this->enterRule($localContext, 32, self::RULE_constant);
+		    $this->enterRule($localContext, 36, self::RULE_constant);
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(145);
+		        $this->setState(155);
 
 		        $_la = $this->input->LA(1);
 
@@ -1580,9 +1659,9 @@ namespace Generated\Context {
 	    	return $this->getTypedRuleContext(ArithmExpressionContext::class, 0);
 	    }
 
-	    public function AddOp() : ?TerminalNode
+	    public function addOp() : ?AddOpContext
 	    {
-	        return $this->getToken(Z99Parser::AddOp, 0);
+	    	return $this->getTypedRuleContext(AddOpContext::class, 0);
 	    }
 
 		public function enterRule(ParseTreeListener $listener) : void
@@ -1622,9 +1701,9 @@ namespace Generated\Context {
 	    	return $this->getTypedRuleContext(TermContext::class, 0);
 	    }
 
-	    public function MultOp() : ?TerminalNode
+	    public function multOp() : ?MultOpContext
 	    {
-	        return $this->getToken(Z99Parser::MultOp, 0);
+	    	return $this->getTypedRuleContext(MultOpContext::class, 0);
 	    }
 
 		public function enterRule(ParseTreeListener $listener) : void
@@ -1690,6 +1769,80 @@ namespace Generated\Context {
 		{
 			if ($listener instanceof Z99Listener) {
 			    $listener->exitFactor($this);
+		    }
+		}
+	} 
+
+	class AddOpContext extends ParserRuleContext
+	{
+		public function __construct(?ParserRuleContext $parent, ?int $invokingState = null)
+		{
+			parent::__construct($parent, $invokingState);
+		}
+
+		public function getRuleIndex() : int
+		{
+		    return Z99Parser::RULE_addOp;
+	    }
+
+	    public function Plus() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Plus, 0);
+	    }
+
+	    public function Minus() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Minus, 0);
+	    }
+
+		public function enterRule(ParseTreeListener $listener) : void
+		{
+			if ($listener instanceof Z99Listener) {
+			    $listener->enterAddOp($this);
+		    }
+		}
+
+		public function exitRule(ParseTreeListener $listener) : void
+		{
+			if ($listener instanceof Z99Listener) {
+			    $listener->exitAddOp($this);
+		    }
+		}
+	} 
+
+	class MultOpContext extends ParserRuleContext
+	{
+		public function __construct(?ParserRuleContext $parent, ?int $invokingState = null)
+		{
+			parent::__construct($parent, $invokingState);
+		}
+
+		public function getRuleIndex() : int
+		{
+		    return Z99Parser::RULE_multOp;
+	    }
+
+	    public function Star() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Star, 0);
+	    }
+
+	    public function Slash() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Slash, 0);
+	    }
+
+		public function enterRule(ParseTreeListener $listener) : void
+		{
+			if ($listener instanceof Z99Listener) {
+			    $listener->enterMultOp($this);
+		    }
+		}
+
+		public function exitRule(ParseTreeListener $listener) : void
+		{
+			if ($listener instanceof Z99Listener) {
+			    $listener->exitMultOp($this);
 		    }
 		}
 	} 

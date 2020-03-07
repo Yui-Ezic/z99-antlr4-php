@@ -173,6 +173,26 @@ interface Z99Listener extends ParseTreeListener {
 	 */
 	public function exitFactor(Context\FactorContext $context) : void;
 	/**
+	 * Enter a parse tree produced by {@see Z99Parser::addOp()}.
+	 * @param $context The parse tree.
+	 */
+	public function enterAddOp(Context\AddOpContext $context) : void;
+	/**
+	 * Exit a parse tree produced by {@see Z99Parser::addOp()}.
+	 * @param $context The parse tree.
+	 */
+	public function exitAddOp(Context\AddOpContext $context) : void;
+	/**
+	 * Enter a parse tree produced by {@see Z99Parser::multOp()}.
+	 * @param $context The parse tree.
+	 */
+	public function enterMultOp(Context\MultOpContext $context) : void;
+	/**
+	 * Exit a parse tree produced by {@see Z99Parser::multOp()}.
+	 * @param $context The parse tree.
+	 */
+	public function exitMultOp(Context\MultOpContext $context) : void;
+	/**
 	 * Enter a parse tree produced by {@see Z99Parser::constant()}.
 	 * @param $context The parse tree.
 	 */

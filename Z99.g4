@@ -65,18 +65,28 @@ boolExpr
 
 arithmExpression
     : term
-    | arithmExpression AddOp term
+    | arithmExpression addOp term
     ;
 
 term
     : factor
-    | term MultOp factor
+    | term multOp factor
     ; 
 
 factor
     : Ident
     | constant
     | LBracket arithmExpression RBracket
+    ;
+
+addOp
+    : Plus
+    | Minus
+    ;
+
+multOp
+    : Star
+    | Slash
     ;
 
 // Const
@@ -107,11 +117,6 @@ UnsignedReal
     : Dot UnsignedInt
     | UnsignedInt Dot UnsignedInt?
     ;
-
-/*BracketsOp
-    : LBracket
-    | RBracket
-    ;*/
 
 // Tokens
 
@@ -157,14 +162,28 @@ RelOp
     | '!='
     ;
 
-AddOp
-    : Plus
-    | Minus
+LBracket // Left Bracket
+    : '('
     ;
 
-MultOp
-    : Star
-    | Slash
+RBracket // Right Bracket
+    : ')'
+    ;
+
+Plus
+    : '+'
+    ;
+
+Minus
+    : '-'
+    ;
+
+Star
+    : '*'
+    ;
+
+Slash
+    : '/'
     ;
 
 
@@ -181,31 +200,6 @@ fragment Letter
 
 fragment Digit
     : [0-9]
-    ;
-
-//TODO:: Unit in "BracketsOp"
-LBracket // Left Bracket
-    : '('
-    ;
-
-RBracket // Right Bracket
-    : ')'
-    ;
-
-fragment Plus
-    : '+'
-    ;
-
-fragment Minus
-    : '-'
-    ;
-
-fragment Star
-    : '*'
-    ;
-
-fragment Slash
-    : '/'
     ;
 
 fragment True

@@ -230,6 +230,32 @@ class Z99BaseListener implements Z99Listener
 	 *
 	 * The default implementation does nothing.
 	 */
+	public function enterAddOp(Context\AddOpContext $context) : void {}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
+	public function exitAddOp(Context\AddOpContext $context) : void {}
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
+	public function enterMultOp(Context\MultOpContext $context) : void {}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
+	public function exitMultOp(Context\MultOpContext $context) : void {}
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
 	public function enterConstant(Context\ConstantContext $context) : void {}
 
 	/**
