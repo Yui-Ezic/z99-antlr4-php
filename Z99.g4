@@ -96,6 +96,8 @@ constant
     | BoolConst
     ;
 
+// Tokens
+
 RealNum
     : Sign? UnsignedReal
     ;
@@ -109,16 +111,6 @@ BoolConst
     | False
     ;
 
-UnsignedInt
-    : Digit+
-    ;
-
-UnsignedReal
-    : Dot UnsignedInt
-    | UnsignedInt Dot UnsignedInt?
-    ;
-
-// Tokens
 
 Type 
     : 'int'
@@ -188,6 +180,15 @@ Slash
 
 
 // Fragment rules
+
+fragment UnsignedInt
+    : Digit+
+    ;
+
+fragment UnsignedReal
+    : Dot UnsignedInt
+    | UnsignedInt Dot UnsignedInt?
+    ;
 
 fragment LetterOrDigit
     : Letter
