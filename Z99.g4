@@ -26,7 +26,7 @@ statement
     : assign
     | input
     | output
-    | ifStatement
+    | branchStatement
     | repeatStatement
     ;
 
@@ -40,13 +40,13 @@ output
     ;
 
 // Branch
-ifStatement
+branchStatement
     : 'if' expression 'then' statementList Semi 'fi'
     ;
 
 // Repeat
 repeatStatement
-    : 'repeat' statementList Semi 'until' expression
+    : 'repeat' statementList Semi 'until' boolExpr
     ;
 
 // Assign
