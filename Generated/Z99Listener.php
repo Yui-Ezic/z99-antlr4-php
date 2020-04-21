@@ -93,15 +93,15 @@ interface Z99Listener extends ParseTreeListener {
 	 */
 	public function exitOutput(Context\OutputContext $context) : void;
 	/**
-	 * Enter a parse tree produced by {@see Z99Parser::ifStatement()}.
+	 * Enter a parse tree produced by {@see Z99Parser::branchStatement()}.
 	 * @param $context The parse tree.
 	 */
-	public function enterIfStatement(Context\IfStatementContext $context) : void;
+	public function enterBranchStatement(Context\BranchStatementContext $context) : void;
 	/**
-	 * Exit a parse tree produced by {@see Z99Parser::ifStatement()}.
+	 * Exit a parse tree produced by {@see Z99Parser::branchStatement()}.
 	 * @param $context The parse tree.
 	 */
-	public function exitIfStatement(Context\IfStatementContext $context) : void;
+	public function exitBranchStatement(Context\BranchStatementContext $context) : void;
 	/**
 	 * Enter a parse tree produced by {@see Z99Parser::repeatStatement()}.
 	 * @param $context The parse tree.

@@ -1,7 +1,55 @@
 grammar Z99;
 
+// Keywords
+
+Begin
+    : 'begin'
+    ;
+
+End
+    : 'end.'
+    ;
+
+Var
+    : 'var'
+    ;
+
+Read
+    : 'read'
+    ;
+
+Write
+    : 'write'
+    ;
+
+If
+    : 'if'
+    ;
+
+Then
+    : 'then'
+    ;
+
+Fi
+    : 'fi'
+    ;
+
+Repeat
+    : 'repeat'
+    ;
+
+Until
+    : 'until'
+    ;
+
+Program
+    : 'program'
+    ;
+
+// Main rule
+
 program
-    : 'program' Ident 'var' declareList Semi 'begin' statementList Semi 'end.' EOF
+    : Program Ident Var declareList Semi Begin statementList Semi End EOF
     ;      
 
 // DeclareList
@@ -32,21 +80,21 @@ statement
 
 // I/O
 input
-    : 'read' LBracket identList RBracket
+    : Read LBracket identList RBracket
     ;
  
 output
-    : 'write' LBracket identList RBracket
+    : Write LBracket identList RBracket
     ;
 
 // Branch
 branchStatement
-    : 'if' expression 'then' statementList Semi 'fi'
+    : If expression Then statementList Semi Fi
     ;
 
 // Repeat
 repeatStatement
-    : 'repeat' statementList Semi 'until' boolExpr
+    : Repeat statementList Semi Until boolExpr
     ;
 
 // Assign

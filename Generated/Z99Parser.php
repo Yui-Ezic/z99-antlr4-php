@@ -23,8 +23,8 @@ namespace Generated {
 
 	final class Z99Parser extends Parser
 	{
-		public const T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, 
-               T__6 = 7, T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, RealNum = 12, 
+		public const Begin = 1, End = 2, Var = 3, Read = 4, Write = 5, If = 6, 
+               Then = 7, Fi = 8, Repeat = 9, Until = 10, Program = 11, RealNum = 12, 
                IntNum = 13, BoolConst = 14, Type = 15, Ident = 16, Semi = 17, 
                Colon = 18, Comma = 19, Dot = 20, AssignOp = 21, RelOp = 22, 
                LBracket = 23, RBracket = 24, Plus = 25, Minus = 26, Star = 27, 
@@ -32,39 +32,39 @@ namespace Generated {
 
 		public const RULE_program = 0, RULE_declareList = 1, RULE_declaration = 2, 
                RULE_identList = 3, RULE_statementList = 4, RULE_statement = 5, 
-               RULE_input = 6, RULE_output = 7, RULE_ifStatement = 8, RULE_repeatStatement = 9, 
-               RULE_assign = 10, RULE_expression = 11, RULE_boolExpr = 12, 
-               RULE_arithmExpression = 13, RULE_term = 14, RULE_factor = 15, 
-               RULE_addOp = 16, RULE_multOp = 17, RULE_constant = 18;
+               RULE_input = 6, RULE_output = 7, RULE_branchStatement = 8, 
+               RULE_repeatStatement = 9, RULE_assign = 10, RULE_expression = 11, 
+               RULE_boolExpr = 12, RULE_arithmExpression = 13, RULE_term = 14, 
+               RULE_factor = 15, RULE_addOp = 16, RULE_multOp = 17, RULE_constant = 18;
 
 		/**
 		 * @var array<string>
 		 */
 		public const RULE_NAMES = [
 			'program', 'declareList', 'declaration', 'identList', 'statementList', 
-			'statement', 'input', 'output', 'ifStatement', 'repeatStatement', 'assign', 
-			'expression', 'boolExpr', 'arithmExpression', 'term', 'factor', 'addOp', 
-			'multOp', 'constant'
+			'statement', 'input', 'output', 'branchStatement', 'repeatStatement', 
+			'assign', 'expression', 'boolExpr', 'arithmExpression', 'term', 'factor', 
+			'addOp', 'multOp', 'constant'
 		];
 
 		/**
 		 * @var array<string|null>
 		 */
 		private const LITERAL_NAMES = [
-		    null, "'program'", "'var'", "'begin'", "'end.'", "'read'", "'write'", 
-		    "'if'", "'then'", "'fi'", "'repeat'", "'until'", null, null, null, 
-		    null, null, "';'", "':'", "','", "'.'", "'='", null, "'('", "')'", 
-		    "'+'", "'-'", "'*'", "'/'"
+		    null, "'begin'", "'end.'", "'var'", "'read'", "'write'", "'if'", "'then'", 
+		    "'fi'", "'repeat'", "'until'", "'program'", null, null, null, null, 
+		    null, "';'", "':'", "','", "'.'", "'='", null, "'('", "')'", "'+'", 
+		    "'-'", "'*'", "'/'"
 		];
 
 		/**
 		 * @var array<string>
 		 */
 		private const SYMBOLIC_NAMES = [
-		    null, null, null, null, null, null, null, null, null, null, null, 
-		    null, "RealNum", "IntNum", "BoolConst", "Type", "Ident", "Semi", "Colon", 
-		    "Comma", "Dot", "AssignOp", "RelOp", "LBracket", "RBracket", "Plus", 
-		    "Minus", "Star", "Slash", "WS"
+		    null, "Begin", "End", "Var", "Read", "Write", "If", "Then", "Fi", 
+		    "Repeat", "Until", "Program", "RealNum", "IntNum", "BoolConst", "Type", 
+		    "Ident", "Semi", "Colon", "Comma", "Dot", "AssignOp", "RelOp", "LBracket", 
+		    "RBracket", "Plus", "Minus", "Star", "Slash", "WS"
 		];
 
 		/**
@@ -110,11 +110,11 @@ namespace Generated {
 		    "\u{2}\u{2}\u{2}\u{1C}\u{79}\u{3}\u{2}\u{2}\u{2}\u{1E}\u{85}\u{3}\u{2}" .
 		    "\u{2}\u{2}\u{20}\u{97}\u{3}\u{2}\u{2}\u{2}\u{22}\u{99}\u{3}\u{2}\u{2}" .
 		    "\u{2}\u{24}\u{9B}\u{3}\u{2}\u{2}\u{2}\u{26}\u{9D}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{28}\u{29}\u{7}\u{3}\u{2}\u{2}\u{29}\u{2A}\u{7}\u{12}\u{2}\u{2}" .
-		    "\u{2A}\u{2B}\u{7}\u{4}\u{2}\u{2}\u{2B}\u{2C}\u{5}\u{4}\u{3}\u{2}\u{2C}" .
-		    "\u{2D}\u{7}\u{13}\u{2}\u{2}\u{2D}\u{2E}\u{7}\u{5}\u{2}\u{2}\u{2E}" .
+		    "\u{28}\u{29}\u{7}\u{D}\u{2}\u{2}\u{29}\u{2A}\u{7}\u{12}\u{2}\u{2}" .
+		    "\u{2A}\u{2B}\u{7}\u{5}\u{2}\u{2}\u{2B}\u{2C}\u{5}\u{4}\u{3}\u{2}\u{2C}" .
+		    "\u{2D}\u{7}\u{13}\u{2}\u{2}\u{2D}\u{2E}\u{7}\u{3}\u{2}\u{2}\u{2E}" .
 		    "\u{2F}\u{5}\u{A}\u{6}\u{2}\u{2F}\u{30}\u{7}\u{13}\u{2}\u{2}\u{30}" .
-		    "\u{31}\u{7}\u{6}\u{2}\u{2}\u{31}\u{32}\u{7}\u{2}\u{2}\u{3}\u{32}\u{3}" .
+		    "\u{31}\u{7}\u{4}\u{2}\u{2}\u{31}\u{32}\u{7}\u{2}\u{2}\u{3}\u{32}\u{3}" .
 		    "\u{3}\u{2}\u{2}\u{2}\u{33}\u{38}\u{5}\u{6}\u{4}\u{2}\u{34}\u{35}\u{7}" .
 		    "\u{13}\u{2}\u{2}\u{35}\u{37}\u{5}\u{6}\u{4}\u{2}\u{36}\u{34}\u{3}" .
 		    "\u{2}\u{2}\u{2}\u{37}\u{3A}\u{3}\u{2}\u{2}\u{2}\u{38}\u{36}\u{3}\u{2}" .
@@ -135,17 +135,17 @@ namespace Generated {
 		    "\u{55}\u{5}\u{14}\u{B}\u{2}\u{54}\u{4F}\u{3}\u{2}\u{2}\u{2}\u{54}" .
 		    "\u{50}\u{3}\u{2}\u{2}\u{2}\u{54}\u{51}\u{3}\u{2}\u{2}\u{2}\u{54}\u{52}" .
 		    "\u{3}\u{2}\u{2}\u{2}\u{54}\u{53}\u{3}\u{2}\u{2}\u{2}\u{55}\u{D}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{56}\u{57}\u{7}\u{7}\u{2}\u{2}\u{57}\u{58}\u{7}\u{19}" .
+		    "\u{2}\u{2}\u{2}\u{56}\u{57}\u{7}\u{6}\u{2}\u{2}\u{57}\u{58}\u{7}\u{19}" .
 		    "\u{2}\u{2}\u{58}\u{59}\u{5}\u{8}\u{5}\u{2}\u{59}\u{5A}\u{7}\u{1A}" .
-		    "\u{2}\u{2}\u{5A}\u{F}\u{3}\u{2}\u{2}\u{2}\u{5B}\u{5C}\u{7}\u{8}\u{2}" .
+		    "\u{2}\u{2}\u{5A}\u{F}\u{3}\u{2}\u{2}\u{2}\u{5B}\u{5C}\u{7}\u{7}\u{2}" .
 		    "\u{2}\u{5C}\u{5D}\u{7}\u{19}\u{2}\u{2}\u{5D}\u{5E}\u{5}\u{8}\u{5}" .
 		    "\u{2}\u{5E}\u{5F}\u{7}\u{1A}\u{2}\u{2}\u{5F}\u{11}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{60}\u{61}\u{7}\u{9}\u{2}\u{2}\u{61}\u{62}\u{5}\u{18}\u{D}" .
-		    "\u{2}\u{62}\u{63}\u{7}\u{A}\u{2}\u{2}\u{63}\u{64}\u{5}\u{A}\u{6}\u{2}" .
-		    "\u{64}\u{65}\u{7}\u{13}\u{2}\u{2}\u{65}\u{66}\u{7}\u{B}\u{2}\u{2}" .
-		    "\u{66}\u{13}\u{3}\u{2}\u{2}\u{2}\u{67}\u{68}\u{7}\u{C}\u{2}\u{2}\u{68}" .
+		    "\u{2}\u{60}\u{61}\u{7}\u{8}\u{2}\u{2}\u{61}\u{62}\u{5}\u{18}\u{D}" .
+		    "\u{2}\u{62}\u{63}\u{7}\u{9}\u{2}\u{2}\u{63}\u{64}\u{5}\u{A}\u{6}\u{2}" .
+		    "\u{64}\u{65}\u{7}\u{13}\u{2}\u{2}\u{65}\u{66}\u{7}\u{A}\u{2}\u{2}" .
+		    "\u{66}\u{13}\u{3}\u{2}\u{2}\u{2}\u{67}\u{68}\u{7}\u{B}\u{2}\u{2}\u{68}" .
 		    "\u{69}\u{5}\u{A}\u{6}\u{2}\u{69}\u{6A}\u{7}\u{13}\u{2}\u{2}\u{6A}" .
-		    "\u{6B}\u{7}\u{D}\u{2}\u{2}\u{6B}\u{6C}\u{5}\u{18}\u{D}\u{2}\u{6C}" .
+		    "\u{6B}\u{7}\u{C}\u{2}\u{2}\u{6B}\u{6C}\u{5}\u{1A}\u{E}\u{2}\u{6C}" .
 		    "\u{15}\u{3}\u{2}\u{2}\u{2}\u{6D}\u{6E}\u{7}\u{12}\u{2}\u{2}\u{6E}" .
 		    "\u{6F}\u{7}\u{17}\u{2}\u{2}\u{6F}\u{70}\u{5}\u{18}\u{D}\u{2}\u{70}" .
 		    "\u{17}\u{3}\u{2}\u{2}\u{2}\u{71}\u{74}\u{5}\u{1C}\u{F}\u{2}\u{72}" .
@@ -247,23 +247,23 @@ namespace Generated {
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
 		        $this->setState(38);
-		        $this->match(self::T__0);
+		        $this->match(self::Program);
 		        $this->setState(39);
 		        $this->match(self::Ident);
 		        $this->setState(40);
-		        $this->match(self::T__1);
+		        $this->match(self::Var);
 		        $this->setState(41);
 		        $this->declareList();
 		        $this->setState(42);
 		        $this->match(self::Semi);
 		        $this->setState(43);
-		        $this->match(self::T__2);
+		        $this->match(self::Begin);
 		        $this->setState(44);
 		        $this->statementList();
 		        $this->setState(45);
 		        $this->match(self::Semi);
 		        $this->setState(46);
-		        $this->match(self::T__3);
+		        $this->match(self::End);
 		        $this->setState(47);
 		        $this->match(self::EOF);
 		    } catch (RecognitionException $exception) {
@@ -446,25 +446,25 @@ namespace Generated {
 		            	$this->assign();
 		            	break;
 
-		            case self::T__4:
+		            case self::Read:
 		            	$this->enterOuterAlt($localContext, 2);
 		            	$this->setState(78);
 		            	$this->input();
 		            	break;
 
-		            case self::T__5:
+		            case self::Write:
 		            	$this->enterOuterAlt($localContext, 3);
 		            	$this->setState(79);
 		            	$this->output();
 		            	break;
 
-		            case self::T__6:
+		            case self::If:
 		            	$this->enterOuterAlt($localContext, 4);
 		            	$this->setState(80);
-		            	$this->ifStatement();
+		            	$this->branchStatement();
 		            	break;
 
-		            case self::T__9:
+		            case self::Repeat:
 		            	$this->enterOuterAlt($localContext, 5);
 		            	$this->setState(81);
 		            	$this->repeatStatement();
@@ -496,7 +496,7 @@ namespace Generated {
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
 		        $this->setState(84);
-		        $this->match(self::T__4);
+		        $this->match(self::Read);
 		        $this->setState(85);
 		        $this->match(self::LBracket);
 		        $this->setState(86);
@@ -526,7 +526,7 @@ namespace Generated {
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
 		        $this->setState(89);
-		        $this->match(self::T__5);
+		        $this->match(self::Write);
 		        $this->setState(90);
 		        $this->match(self::LBracket);
 		        $this->setState(91);
@@ -547,26 +547,26 @@ namespace Generated {
 		/**
 		 * @throws RecognitionException
 		 */
-		public function ifStatement() : Context\IfStatementContext
+		public function branchStatement() : Context\BranchStatementContext
 		{
-		    $localContext = new Context\IfStatementContext($this->ctx, $this->getState());
+		    $localContext = new Context\BranchStatementContext($this->ctx, $this->getState());
 
-		    $this->enterRule($localContext, 16, self::RULE_ifStatement);
+		    $this->enterRule($localContext, 16, self::RULE_branchStatement);
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
 		        $this->setState(94);
-		        $this->match(self::T__6);
+		        $this->match(self::If);
 		        $this->setState(95);
 		        $this->expression();
 		        $this->setState(96);
-		        $this->match(self::T__7);
+		        $this->match(self::Then);
 		        $this->setState(97);
 		        $this->statementList();
 		        $this->setState(98);
 		        $this->match(self::Semi);
 		        $this->setState(99);
-		        $this->match(self::T__8);
+		        $this->match(self::Fi);
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
 		        $this->errorHandler->reportError($this, $exception);
@@ -590,15 +590,15 @@ namespace Generated {
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
 		        $this->setState(101);
-		        $this->match(self::T__9);
+		        $this->match(self::Repeat);
 		        $this->setState(102);
 		        $this->statementList();
 		        $this->setState(103);
 		        $this->match(self::Semi);
 		        $this->setState(104);
-		        $this->match(self::T__10);
+		        $this->match(self::Until);
 		        $this->setState(105);
-		        $this->expression();
+		        $this->boolExpr();
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
 		        $this->errorHandler->reportError($this, $exception);
@@ -1052,9 +1052,19 @@ namespace Generated\Context {
 		    return Z99Parser::RULE_program;
 	    }
 
+	    public function Program() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Program, 0);
+	    }
+
 	    public function Ident() : ?TerminalNode
 	    {
 	        return $this->getToken(Z99Parser::Ident, 0);
+	    }
+
+	    public function Var() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Var, 0);
 	    }
 
 	    public function declareList() : ?DeclareListContext
@@ -1074,9 +1084,19 @@ namespace Generated\Context {
 	        return $this->getToken(Z99Parser::Semi, $index);
 	    }
 
+	    public function Begin() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Begin, 0);
+	    }
+
 	    public function statementList() : ?StatementListContext
 	    {
 	    	return $this->getTypedRuleContext(StatementListContext::class, 0);
+	    }
+
+	    public function End() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::End, 0);
 	    }
 
 	    public function EOF() : ?TerminalNode
@@ -1321,9 +1341,9 @@ namespace Generated\Context {
 	    	return $this->getTypedRuleContext(OutputContext::class, 0);
 	    }
 
-	    public function ifStatement() : ?IfStatementContext
+	    public function branchStatement() : ?BranchStatementContext
 	    {
-	    	return $this->getTypedRuleContext(IfStatementContext::class, 0);
+	    	return $this->getTypedRuleContext(BranchStatementContext::class, 0);
 	    }
 
 	    public function repeatStatement() : ?RepeatStatementContext
@@ -1356,6 +1376,11 @@ namespace Generated\Context {
 		public function getRuleIndex() : int
 		{
 		    return Z99Parser::RULE_input;
+	    }
+
+	    public function Read() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Read, 0);
 	    }
 
 	    public function LBracket() : ?TerminalNode
@@ -1400,6 +1425,11 @@ namespace Generated\Context {
 		    return Z99Parser::RULE_output;
 	    }
 
+	    public function Write() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Write, 0);
+	    }
+
 	    public function LBracket() : ?TerminalNode
 	    {
 	        return $this->getToken(Z99Parser::LBracket, 0);
@@ -1430,7 +1460,7 @@ namespace Generated\Context {
 		}
 	} 
 
-	class IfStatementContext extends ParserRuleContext
+	class BranchStatementContext extends ParserRuleContext
 	{
 		public function __construct(?ParserRuleContext $parent, ?int $invokingState = null)
 		{
@@ -1439,12 +1469,22 @@ namespace Generated\Context {
 
 		public function getRuleIndex() : int
 		{
-		    return Z99Parser::RULE_ifStatement;
+		    return Z99Parser::RULE_branchStatement;
+	    }
+
+	    public function If() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::If, 0);
 	    }
 
 	    public function expression() : ?ExpressionContext
 	    {
 	    	return $this->getTypedRuleContext(ExpressionContext::class, 0);
+	    }
+
+	    public function Then() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Then, 0);
 	    }
 
 	    public function statementList() : ?StatementListContext
@@ -1457,17 +1497,22 @@ namespace Generated\Context {
 	        return $this->getToken(Z99Parser::Semi, 0);
 	    }
 
+	    public function Fi() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Fi, 0);
+	    }
+
 		public function enterRule(ParseTreeListener $listener) : void
 		{
 			if ($listener instanceof Z99Listener) {
-			    $listener->enterIfStatement($this);
+			    $listener->enterBranchStatement($this);
 		    }
 		}
 
 		public function exitRule(ParseTreeListener $listener) : void
 		{
 			if ($listener instanceof Z99Listener) {
-			    $listener->exitIfStatement($this);
+			    $listener->exitBranchStatement($this);
 		    }
 		}
 	} 
@@ -1484,6 +1529,11 @@ namespace Generated\Context {
 		    return Z99Parser::RULE_repeatStatement;
 	    }
 
+	    public function Repeat() : ?TerminalNode
+	    {
+	        return $this->getToken(Z99Parser::Repeat, 0);
+	    }
+
 	    public function statementList() : ?StatementListContext
 	    {
 	    	return $this->getTypedRuleContext(StatementListContext::class, 0);
@@ -1494,9 +1544,14 @@ namespace Generated\Context {
 	        return $this->getToken(Z99Parser::Semi, 0);
 	    }
 
-	    public function expression() : ?ExpressionContext
+	    public function Until() : ?TerminalNode
 	    {
-	    	return $this->getTypedRuleContext(ExpressionContext::class, 0);
+	        return $this->getToken(Z99Parser::Until, 0);
+	    }
+
+	    public function boolExpr() : ?BoolExprContext
+	    {
+	    	return $this->getTypedRuleContext(BoolExprContext::class, 0);
 	    }
 
 		public function enterRule(ParseTreeListener $listener) : void

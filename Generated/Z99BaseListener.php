@@ -126,14 +126,14 @@ class Z99BaseListener implements Z99Listener
 	 *
 	 * The default implementation does nothing.
 	 */
-	public function enterIfStatement(Context\IfStatementContext $context) : void {}
+	public function enterBranchStatement(Context\BranchStatementContext $context) : void {}
 
 	/**
 	 * {@inheritdoc}
 	 *
 	 * The default implementation does nothing.
 	 */
-	public function exitIfStatement(Context\IfStatementContext $context) : void {}
+	public function exitBranchStatement(Context\BranchStatementContext $context) : void {}
 	/**
 	 * {@inheritdoc}
 	 *
