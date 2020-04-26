@@ -72,7 +72,7 @@ namespace Generated {
 		 */
 		private const SERIALIZED_ATN =
 			"\u{3}\u{608B}\u{A72A}\u{8133}\u{B9ED}\u{417C}\u{3BE7}\u{7786}\u{5964}" .
-		    "\u{3}\u{1F}\u{A0}\u{4}\u{2}\u{9}\u{2}\u{4}\u{3}\u{9}\u{3}\u{4}\u{4}" .
+		    "\u{3}\u{1F}\u{96}\u{4}\u{2}\u{9}\u{2}\u{4}\u{3}\u{9}\u{3}\u{4}\u{4}" .
 		    "\u{9}\u{4}\u{4}\u{5}\u{9}\u{5}\u{4}\u{6}\u{9}\u{6}\u{4}\u{7}\u{9}" .
 		    "\u{7}\u{4}\u{8}\u{9}\u{8}\u{4}\u{9}\u{9}\u{9}\u{4}\u{A}\u{9}\u{A}" .
 		    "\u{4}\u{B}\u{9}\u{B}\u{4}\u{C}\u{9}\u{C}\u{4}\u{D}\u{9}\u{D}\u{4}" .
@@ -92,24 +92,22 @@ namespace Generated {
 		    "\u{3}\u{B}\u{3}\u{B}\u{3}\u{C}\u{3}\u{C}\u{3}\u{C}\u{3}\u{C}\u{3}" .
 		    "\u{D}\u{3}\u{D}\u{5}\u{D}\u{74}\u{A}\u{D}\u{3}\u{E}\u{3}\u{E}\u{3}" .
 		    "\u{E}\u{3}\u{E}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}\u{3}\u{F}" .
-		    "\u{3}\u{F}\u{3}\u{F}\u{7}\u{F}\u{81}\u{A}\u{F}\u{C}\u{F}\u{E}\u{F}" .
-		    "\u{84}\u{B}\u{F}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}\u{3}" .
-		    "\u{10}\u{3}\u{10}\u{3}\u{10}\u{7}\u{10}\u{8D}\u{A}\u{10}\u{C}\u{10}" .
-		    "\u{E}\u{10}\u{90}\u{B}\u{10}\u{3}\u{11}\u{3}\u{11}\u{3}\u{11}\u{3}" .
-		    "\u{11}\u{3}\u{11}\u{3}\u{11}\u{5}\u{11}\u{98}\u{A}\u{11}\u{3}\u{12}" .
-		    "\u{3}\u{12}\u{3}\u{13}\u{3}\u{13}\u{3}\u{14}\u{3}\u{14}\u{3}\u{14}" .
-		    "\u{2}\u{4}\u{1C}\u{1E}\u{15}\u{2}\u{4}\u{6}\u{8}\u{A}\u{C}\u{E}\u{10}" .
+		    "\u{5}\u{F}\u{7F}\u{A}\u{F}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}\u{3}\u{10}" .
+		    "\u{3}\u{10}\u{5}\u{10}\u{86}\u{A}\u{10}\u{3}\u{11}\u{3}\u{11}\u{3}" .
+		    "\u{11}\u{3}\u{11}\u{3}\u{11}\u{3}\u{11}\u{5}\u{11}\u{8E}\u{A}\u{11}" .
+		    "\u{3}\u{12}\u{3}\u{12}\u{3}\u{13}\u{3}\u{13}\u{3}\u{14}\u{3}\u{14}" .
+		    "\u{3}\u{14}\u{2}\u{2}\u{15}\u{2}\u{4}\u{6}\u{8}\u{A}\u{C}\u{E}\u{10}" .
 		    "\u{12}\u{14}\u{16}\u{18}\u{1A}\u{1C}\u{1E}\u{20}\u{22}\u{24}\u{26}" .
 		    "\u{2}\u{5}\u{3}\u{2}\u{1B}\u{1C}\u{3}\u{2}\u{1D}\u{1E}\u{3}\u{2}\u{E}" .
-		    "\u{10}\u{2}\u{98}\u{2}\u{28}\u{3}\u{2}\u{2}\u{2}\u{4}\u{33}\u{3}\u{2}" .
+		    "\u{10}\u{2}\u{8E}\u{2}\u{28}\u{3}\u{2}\u{2}\u{2}\u{4}\u{33}\u{3}\u{2}" .
 		    "\u{2}\u{2}\u{6}\u{3B}\u{3}\u{2}\u{2}\u{2}\u{8}\u{3F}\u{3}\u{2}\u{2}" .
 		    "\u{2}\u{A}\u{47}\u{3}\u{2}\u{2}\u{2}\u{C}\u{54}\u{3}\u{2}\u{2}\u{2}" .
 		    "\u{E}\u{56}\u{3}\u{2}\u{2}\u{2}\u{10}\u{5B}\u{3}\u{2}\u{2}\u{2}\u{12}" .
 		    "\u{60}\u{3}\u{2}\u{2}\u{2}\u{14}\u{67}\u{3}\u{2}\u{2}\u{2}\u{16}\u{6D}" .
 		    "\u{3}\u{2}\u{2}\u{2}\u{18}\u{73}\u{3}\u{2}\u{2}\u{2}\u{1A}\u{75}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{1C}\u{79}\u{3}\u{2}\u{2}\u{2}\u{1E}\u{85}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{20}\u{97}\u{3}\u{2}\u{2}\u{2}\u{22}\u{99}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{24}\u{9B}\u{3}\u{2}\u{2}\u{2}\u{26}\u{9D}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{2}\u{2}\u{2}\u{1C}\u{7E}\u{3}\u{2}\u{2}\u{2}\u{1E}\u{85}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{20}\u{8D}\u{3}\u{2}\u{2}\u{2}\u{22}\u{8F}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{24}\u{91}\u{3}\u{2}\u{2}\u{2}\u{26}\u{93}\u{3}\u{2}\u{2}\u{2}" .
 		    "\u{28}\u{29}\u{7}\u{D}\u{2}\u{2}\u{29}\u{2A}\u{7}\u{12}\u{2}\u{2}" .
 		    "\u{2A}\u{2B}\u{7}\u{5}\u{2}\u{2}\u{2B}\u{2C}\u{5}\u{4}\u{3}\u{2}\u{2C}" .
 		    "\u{2D}\u{7}\u{13}\u{2}\u{2}\u{2D}\u{2E}\u{7}\u{3}\u{2}\u{2}\u{2E}" .
@@ -152,28 +150,23 @@ namespace Generated {
 		    "\u{74}\u{5}\u{1A}\u{E}\u{2}\u{73}\u{71}\u{3}\u{2}\u{2}\u{2}\u{73}" .
 		    "\u{72}\u{3}\u{2}\u{2}\u{2}\u{74}\u{19}\u{3}\u{2}\u{2}\u{2}\u{75}\u{76}" .
 		    "\u{5}\u{1C}\u{F}\u{2}\u{76}\u{77}\u{7}\u{18}\u{2}\u{2}\u{77}\u{78}" .
-		    "\u{5}\u{1C}\u{F}\u{2}\u{78}\u{1B}\u{3}\u{2}\u{2}\u{2}\u{79}\u{7A}" .
-		    "\u{8}\u{F}\u{1}\u{2}\u{7A}\u{7B}\u{5}\u{1E}\u{10}\u{2}\u{7B}\u{82}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{7C}\u{7D}\u{C}\u{3}\u{2}\u{2}\u{7D}\u{7E}\u{5}" .
-		    "\u{22}\u{12}\u{2}\u{7E}\u{7F}\u{5}\u{1E}\u{10}\u{2}\u{7F}\u{81}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{80}\u{7C}\u{3}\u{2}\u{2}\u{2}\u{81}\u{84}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{82}\u{80}\u{3}\u{2}\u{2}\u{2}\u{82}\u{83}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{83}\u{1D}\u{3}\u{2}\u{2}\u{2}\u{84}\u{82}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{85}\u{86}\u{8}\u{10}\u{1}\u{2}\u{86}\u{87}\u{5}\u{20}\u{11}\u{2}" .
-		    "\u{87}\u{8E}\u{3}\u{2}\u{2}\u{2}\u{88}\u{89}\u{C}\u{3}\u{2}\u{2}\u{89}" .
-		    "\u{8A}\u{5}\u{24}\u{13}\u{2}\u{8A}\u{8B}\u{5}\u{20}\u{11}\u{2}\u{8B}" .
-		    "\u{8D}\u{3}\u{2}\u{2}\u{2}\u{8C}\u{88}\u{3}\u{2}\u{2}\u{2}\u{8D}\u{90}" .
-		    "\u{3}\u{2}\u{2}\u{2}\u{8E}\u{8C}\u{3}\u{2}\u{2}\u{2}\u{8E}\u{8F}\u{3}" .
-		    "\u{2}\u{2}\u{2}\u{8F}\u{1F}\u{3}\u{2}\u{2}\u{2}\u{90}\u{8E}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{91}\u{98}\u{7}\u{12}\u{2}\u{2}\u{92}\u{98}\u{5}\u{26}" .
-		    "\u{14}\u{2}\u{93}\u{94}\u{7}\u{19}\u{2}\u{2}\u{94}\u{95}\u{5}\u{1C}" .
-		    "\u{F}\u{2}\u{95}\u{96}\u{7}\u{1A}\u{2}\u{2}\u{96}\u{98}\u{3}\u{2}" .
-		    "\u{2}\u{2}\u{97}\u{91}\u{3}\u{2}\u{2}\u{2}\u{97}\u{92}\u{3}\u{2}\u{2}" .
-		    "\u{2}\u{97}\u{93}\u{3}\u{2}\u{2}\u{2}\u{98}\u{21}\u{3}\u{2}\u{2}\u{2}" .
-		    "\u{99}\u{9A}\u{9}\u{2}\u{2}\u{2}\u{9A}\u{23}\u{3}\u{2}\u{2}\u{2}\u{9B}" .
-		    "\u{9C}\u{9}\u{3}\u{2}\u{2}\u{9C}\u{25}\u{3}\u{2}\u{2}\u{2}\u{9D}\u{9E}" .
-		    "\u{9}\u{4}\u{2}\u{2}\u{9E}\u{27}\u{3}\u{2}\u{2}\u{2}\u{A}\u{38}\u{44}" .
-		    "\u{4C}\u{54}\u{73}\u{82}\u{8E}\u{97}";
+		    "\u{5}\u{1C}\u{F}\u{2}\u{78}\u{1B}\u{3}\u{2}\u{2}\u{2}\u{79}\u{7F}" .
+		    "\u{5}\u{1E}\u{10}\u{2}\u{7A}\u{7B}\u{5}\u{1E}\u{10}\u{2}\u{7B}\u{7C}" .
+		    "\u{5}\u{22}\u{12}\u{2}\u{7C}\u{7D}\u{5}\u{1C}\u{F}\u{2}\u{7D}\u{7F}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{7E}\u{79}\u{3}\u{2}\u{2}\u{2}\u{7E}\u{7A}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{7F}\u{1D}\u{3}\u{2}\u{2}\u{2}\u{80}\u{86}\u{5}\u{20}" .
+		    "\u{11}\u{2}\u{81}\u{82}\u{5}\u{20}\u{11}\u{2}\u{82}\u{83}\u{5}\u{24}" .
+		    "\u{13}\u{2}\u{83}\u{84}\u{5}\u{1E}\u{10}\u{2}\u{84}\u{86}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{85}\u{80}\u{3}\u{2}\u{2}\u{2}\u{85}\u{81}\u{3}\u{2}\u{2}" .
+		    "\u{2}\u{86}\u{1F}\u{3}\u{2}\u{2}\u{2}\u{87}\u{8E}\u{7}\u{12}\u{2}" .
+		    "\u{2}\u{88}\u{8E}\u{5}\u{26}\u{14}\u{2}\u{89}\u{8A}\u{7}\u{19}\u{2}" .
+		    "\u{2}\u{8A}\u{8B}\u{5}\u{1C}\u{F}\u{2}\u{8B}\u{8C}\u{7}\u{1A}\u{2}" .
+		    "\u{2}\u{8C}\u{8E}\u{3}\u{2}\u{2}\u{2}\u{8D}\u{87}\u{3}\u{2}\u{2}\u{2}" .
+		    "\u{8D}\u{88}\u{3}\u{2}\u{2}\u{2}\u{8D}\u{89}\u{3}\u{2}\u{2}\u{2}\u{8E}" .
+		    "\u{21}\u{3}\u{2}\u{2}\u{2}\u{8F}\u{90}\u{9}\u{2}\u{2}\u{2}\u{90}\u{23}" .
+		    "\u{3}\u{2}\u{2}\u{2}\u{91}\u{92}\u{9}\u{3}\u{2}\u{2}\u{92}\u{25}\u{3}" .
+		    "\u{2}\u{2}\u{2}\u{93}\u{94}\u{9}\u{4}\u{2}\u{2}\u{94}\u{27}\u{3}\u{2}" .
+		    "\u{2}\u{2}\u{A}\u{38}\u{44}\u{4C}\u{54}\u{73}\u{7E}\u{85}\u{8D}";
 
 		protected static $atn;
 		protected static $decisionToDFA;
@@ -655,7 +648,7 @@ namespace Generated {
 		        	case 1:
 		        	    $this->enterOuterAlt($localContext, 1);
 		        	    $this->setState(111);
-		        	    $this->recursiveArithmExpression(0);
+		        	    $this->arithmExpression();
 		        	break;
 
 		        	case 2:
@@ -687,11 +680,11 @@ namespace Generated {
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
 		        $this->setState(115);
-		        $this->recursiveArithmExpression(0);
+		        $this->arithmExpression();
 		        $this->setState(116);
 		        $this->match(self::RelOp);
 		        $this->setState(117);
-		        $this->recursiveArithmExpression(0);
+		        $this->arithmExpression();
 		    } catch (RecognitionException $exception) {
 		        $localContext->exception = $exception;
 		        $this->errorHandler->reportError($this, $exception);
@@ -708,65 +701,40 @@ namespace Generated {
 		 */
 		public function arithmExpression() : Context\ArithmExpressionContext
 		{
-			return $this->recursiveArithmExpression(0);
-		}
+		    $localContext = new Context\ArithmExpressionContext($this->ctx, $this->getState());
 
-		/**
-		 * @throws RecognitionException
-		 */
-		private function recursiveArithmExpression(int $precedence) : Context\ArithmExpressionContext
-		{
-			$parentContext = $this->ctx;
-			$parentState = $this->getState();
-			$localContext = new Context\ArithmExpressionContext($this->ctx, $parentState);
-			$previousContext = $localContext;
-			$startState = 26;
-			$this->enterRecursionRule($localContext, 26, self::RULE_arithmExpression, $precedence);
+		    $this->enterRule($localContext, 26, self::RULE_arithmExpression);
 
-			try {
-				$this->enterOuterAlt($localContext, 1);
-				$this->setState(120);
-				$this->recursiveTerm(0);
-				$this->ctx->stop = $this->input->LT(-1);
-				$this->setState(128);
-				$this->errorHandler->sync($this);
+		    try {
+		        $this->setState(124);
+		        $this->errorHandler->sync($this);
 
-				$alt = $this->getInterpreter()->adaptivePredict($this->input, 5, $this->ctx);
+		        switch ($this->getInterpreter()->adaptivePredict($this->input, 5, $this->ctx)) {
+		        	case 1:
+		        	    $this->enterOuterAlt($localContext, 1);
+		        	    $this->setState(119);
+		        	    $this->term();
+		        	break;
 
-				while ($alt !== 2 && $alt !== ATN::INVALID_ALT_NUMBER) {
-					if ($alt === 1) {
-						if ($this->getParseListeners() !== null) {
-						    $this->triggerExitRuleEvent();
-						}
+		        	case 2:
+		        	    $this->enterOuterAlt($localContext, 2);
+		        	    $this->setState(120);
+		        	    $this->term();
+		        	    $this->setState(121);
+		        	    $this->addOp();
+		        	    $this->setState(122);
+		        	    $this->arithmExpression();
+		        	break;
+		        }
+		    } catch (RecognitionException $exception) {
+		        $localContext->exception = $exception;
+		        $this->errorHandler->reportError($this, $exception);
+		        $this->errorHandler->recover($this, $exception);
+		    } finally {
+		        $this->exitRule();
+		    }
 
-						$previousContext = $localContext;
-						$localContext = new Context\ArithmExpressionContext($parentContext, $parentState);
-						$this->pushNewRecursionContext($localContext, $startState, self::RULE_arithmExpression);
-						$this->setState(122);
-
-						if (!($this->precpred($this->ctx, 1))) {
-						    throw new FailedPredicateException($this, "\\\$this->precpred(\\\$this->ctx, 1)");
-						}
-						$this->setState(123);
-						$this->addOp();
-						$this->setState(124);
-						$this->recursiveTerm(0); 
-					}
-
-					$this->setState(130);
-					$this->errorHandler->sync($this);
-
-					$alt = $this->getInterpreter()->adaptivePredict($this->input, 5, $this->ctx);
-				}
-			} catch (RecognitionException $exception) {
-				$localContext->exception = $exception;
-				$this->errorHandler->reportError($this, $exception);
-				$this->errorHandler->recover($this, $exception);
-			} finally {
-				$this->unrollRecursionContexts($parentContext);
-			}
-
-			return $localContext;
+		    return $localContext;
 		}
 
 		/**
@@ -774,65 +742,40 @@ namespace Generated {
 		 */
 		public function term() : Context\TermContext
 		{
-			return $this->recursiveTerm(0);
-		}
+		    $localContext = new Context\TermContext($this->ctx, $this->getState());
 
-		/**
-		 * @throws RecognitionException
-		 */
-		private function recursiveTerm(int $precedence) : Context\TermContext
-		{
-			$parentContext = $this->ctx;
-			$parentState = $this->getState();
-			$localContext = new Context\TermContext($this->ctx, $parentState);
-			$previousContext = $localContext;
-			$startState = 28;
-			$this->enterRecursionRule($localContext, 28, self::RULE_term, $precedence);
+		    $this->enterRule($localContext, 28, self::RULE_term);
 
-			try {
-				$this->enterOuterAlt($localContext, 1);
-				$this->setState(132);
-				$this->factor();
-				$this->ctx->stop = $this->input->LT(-1);
-				$this->setState(140);
-				$this->errorHandler->sync($this);
+		    try {
+		        $this->setState(131);
+		        $this->errorHandler->sync($this);
 
-				$alt = $this->getInterpreter()->adaptivePredict($this->input, 6, $this->ctx);
+		        switch ($this->getInterpreter()->adaptivePredict($this->input, 6, $this->ctx)) {
+		        	case 1:
+		        	    $this->enterOuterAlt($localContext, 1);
+		        	    $this->setState(126);
+		        	    $this->factor();
+		        	break;
 
-				while ($alt !== 2 && $alt !== ATN::INVALID_ALT_NUMBER) {
-					if ($alt === 1) {
-						if ($this->getParseListeners() !== null) {
-						    $this->triggerExitRuleEvent();
-						}
+		        	case 2:
+		        	    $this->enterOuterAlt($localContext, 2);
+		        	    $this->setState(127);
+		        	    $this->factor();
+		        	    $this->setState(128);
+		        	    $this->multOp();
+		        	    $this->setState(129);
+		        	    $this->term();
+		        	break;
+		        }
+		    } catch (RecognitionException $exception) {
+		        $localContext->exception = $exception;
+		        $this->errorHandler->reportError($this, $exception);
+		        $this->errorHandler->recover($this, $exception);
+		    } finally {
+		        $this->exitRule();
+		    }
 
-						$previousContext = $localContext;
-						$localContext = new Context\TermContext($parentContext, $parentState);
-						$this->pushNewRecursionContext($localContext, $startState, self::RULE_term);
-						$this->setState(134);
-
-						if (!($this->precpred($this->ctx, 1))) {
-						    throw new FailedPredicateException($this, "\\\$this->precpred(\\\$this->ctx, 1)");
-						}
-						$this->setState(135);
-						$this->multOp();
-						$this->setState(136);
-						$this->factor(); 
-					}
-
-					$this->setState(142);
-					$this->errorHandler->sync($this);
-
-					$alt = $this->getInterpreter()->adaptivePredict($this->input, 6, $this->ctx);
-				}
-			} catch (RecognitionException $exception) {
-				$localContext->exception = $exception;
-				$this->errorHandler->reportError($this, $exception);
-				$this->errorHandler->recover($this, $exception);
-			} finally {
-				$this->unrollRecursionContexts($parentContext);
-			}
-
-			return $localContext;
+		    return $localContext;
 		}
 
 		/**
@@ -845,13 +788,13 @@ namespace Generated {
 		    $this->enterRule($localContext, 30, self::RULE_factor);
 
 		    try {
-		        $this->setState(149);
+		        $this->setState(139);
 		        $this->errorHandler->sync($this);
 
 		        switch ($this->input->LA(1)) {
 		            case self::Ident:
 		            	$this->enterOuterAlt($localContext, 1);
-		            	$this->setState(143);
+		            	$this->setState(133);
 		            	$this->match(self::Ident);
 		            	break;
 
@@ -859,17 +802,17 @@ namespace Generated {
 		            case self::IntNum:
 		            case self::BoolConst:
 		            	$this->enterOuterAlt($localContext, 2);
-		            	$this->setState(144);
+		            	$this->setState(134);
 		            	$this->constant();
 		            	break;
 
 		            case self::LBracket:
 		            	$this->enterOuterAlt($localContext, 3);
-		            	$this->setState(145);
+		            	$this->setState(135);
 		            	$this->match(self::LBracket);
-		            	$this->setState(146);
-		            	$this->recursiveArithmExpression(0);
-		            	$this->setState(147);
+		            	$this->setState(136);
+		            	$this->arithmExpression();
+		            	$this->setState(137);
 		            	$this->match(self::RBracket);
 		            	break;
 
@@ -898,7 +841,7 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(151);
+		        $this->setState(141);
 
 		        $_la = $this->input->LA(1);
 
@@ -934,7 +877,7 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(153);
+		        $this->setState(143);
 
 		        $_la = $this->input->LA(1);
 
@@ -970,7 +913,7 @@ namespace Generated {
 
 		    try {
 		        $this->enterOuterAlt($localContext, 1);
-		        $this->setState(155);
+		        $this->setState(145);
 
 		        $_la = $this->input->LA(1);
 
@@ -993,40 +936,6 @@ namespace Generated {
 		    }
 
 		    return $localContext;
-		}
-
-		public function sempred(?RuleContext $localContext, int $ruleIndex, int $predicateIndex) : bool
-		{
-			switch ($ruleIndex) {
-					case 13:
-						return $this->sempredArithmExpression($localContext, $predicateIndex);
-
-					case 14:
-						return $this->sempredTerm($localContext, $predicateIndex);
-
-				default:
-					return true;
-				}
-		}
-
-		private function sempredArithmExpression(?Context\ArithmExpressionContext $localContext, int $predicateIndex) : bool
-		{
-			switch ($predicateIndex) {
-			    case 0:
-			        return $this->precpred($this->ctx, 1);
-			}
-
-			return true;
-		}
-
-		private function sempredTerm(?Context\TermContext $localContext, int $predicateIndex) : bool
-		{
-			switch ($predicateIndex) {
-			    case 1:
-			        return $this->precpred($this->ctx, 1);
-			}
-
-			return true;
 		}
 	}
 }
@@ -1709,14 +1618,14 @@ namespace Generated\Context {
 	    	return $this->getTypedRuleContext(TermContext::class, 0);
 	    }
 
-	    public function arithmExpression() : ?ArithmExpressionContext
-	    {
-	    	return $this->getTypedRuleContext(ArithmExpressionContext::class, 0);
-	    }
-
 	    public function addOp() : ?AddOpContext
 	    {
 	    	return $this->getTypedRuleContext(AddOpContext::class, 0);
+	    }
+
+	    public function arithmExpression() : ?ArithmExpressionContext
+	    {
+	    	return $this->getTypedRuleContext(ArithmExpressionContext::class, 0);
 	    }
 
 		public function enterRule(ParseTreeListener $listener) : void
@@ -1751,14 +1660,14 @@ namespace Generated\Context {
 	    	return $this->getTypedRuleContext(FactorContext::class, 0);
 	    }
 
-	    public function term() : ?TermContext
-	    {
-	    	return $this->getTypedRuleContext(TermContext::class, 0);
-	    }
-
 	    public function multOp() : ?MultOpContext
 	    {
 	    	return $this->getTypedRuleContext(MultOpContext::class, 0);
+	    }
+
+	    public function term() : ?TermContext
+	    {
+	    	return $this->getTypedRuleContext(TermContext::class, 0);
 	    }
 
 		public function enterRule(ParseTreeListener $listener) : void

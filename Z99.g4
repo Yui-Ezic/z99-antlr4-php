@@ -113,12 +113,12 @@ boolExpr
 
 arithmExpression
     : term
-    | arithmExpression addOp term
+    | term addOp arithmExpression
     ;
 
 term
     : factor
-    | term multOp factor
+    | factor multOp term
     ; 
 
 factor
