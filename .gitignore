@@ -30,3 +30,5 @@ phpunit.phar
 /.vagrant
 
 .antlr
+
+output.txt
